@@ -6,20 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body.component.css'],
 })
 export class BodyComponent implements OnInit {
-  mostrarValor = true;
+  // export class BodyComponent {
+  // mostrarValor = true;
+  ngOnInit(): void {}
+  // materias: string[] = [
+  //   'Matemáticas para Ingeniería',
+  //   'Administracuión  de Base de Datos',
+  //   'Desarrollo Web Profesional',
+  //   'Inglés VII',
+  //   'Planificación y Organización del Trabajo',
+  //   'Seguridad en el Desarrollo de Aplicaciones',
+  // ];
+  // contador = 0;
+  mensaje: string = 'Laboratios Angular IDGS 81 Duarte';
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
-  materias: string[] = [
-    'Matemáticas para Ingeniería',
-    'Administracuión  de Base de Datos',
-    'Desarrollo Web Profesional',
-    'Inglés VII',
-    'Planificación y Organización del Trabajo',
-    'Seguridad en el Desarrollo de Aplicaciones',
-  ];
-
-  contador = 0;
+  constructor() {}
 }
