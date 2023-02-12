@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { DirectivasComponent } from './directivas/directivas.component';
@@ -9,6 +10,10 @@ import { MateriaComponent } from './materia/materia.component';
 import { MateriasService } from './services/materias.service';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { PaisesComponent } from './paises/paises.component';
+import { PaisTarjetaComponent } from './pais-tarjeta/pais-tarjeta.component';
+import { PaisDetalleComponent } from './pais-detalle/pais-detalle.component';
+import { PaisesService } from './services/paises.service';
 
 const ROUTES: Routes = [
   {
@@ -22,6 +27,14 @@ const ROUTES: Routes = [
   {
     path: 'materias',
     component: MateriasComponent,
+  },
+  {
+    path: 'paises',
+    component: PaisesComponent,
+  },
+  {
+    path: 'pais/:id',
+    component: PaisDetalleComponent,
   },
   {
     ///redirecciona a home si se accede a una ruta que no existe o a la raiz
@@ -39,10 +52,18 @@ const ROUTES: Routes = [
     MateriasComponent,
     MateriaComponent,
     HeaderComponent,
+    PaisesComponent,
+    PaisTarjetaComponent,
+    PaisDetalleComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(ROUTES), FormsModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(ROUTES),
+    FormsModule,
+    HttpClientModule,
+  ],
   exports: [RouterModule],
-  providers: [MateriasService],
+  providers: [MateriasService, PaisesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
