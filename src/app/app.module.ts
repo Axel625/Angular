@@ -9,11 +9,12 @@ import { MateriasComponent } from './materias/materias.component';
 import { MateriaComponent } from './materia/materia.component';
 import { MateriasService } from './services/materias.service';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaisesComponent } from './paises/paises.component';
 import { PaisTarjetaComponent } from './pais-tarjeta/pais-tarjeta.component';
 import { PaisDetalleComponent } from './pais-detalle/pais-detalle.component';
 import { PaisesService } from './services/paises.service';
+import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 
 const ROUTES: Routes = [
   {
@@ -37,6 +38,10 @@ const ROUTES: Routes = [
     component: PaisDetalleComponent,
   },
   {
+    path: 'nuevoUsuario',
+    component: NuevoUsuarioComponent,
+  },
+  {
     ///redirecciona a home si se accede a una ruta que no existe o a la raiz
     path: '**',
     pathMatch: 'full',
@@ -55,11 +60,13 @@ const ROUTES: Routes = [
     PaisesComponent,
     PaisTarjetaComponent,
     PaisDetalleComponent,
+    NuevoUsuarioComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   exports: [RouterModule],
